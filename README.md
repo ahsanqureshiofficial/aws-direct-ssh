@@ -17,7 +17,7 @@ This script modifies SSH security settings to enable password authentication and
 - Run this command directly on your VPS logged in as root.
 
 ```bash
-wget https://raw.githubusercontent.com/ahsanqureshiofficial/aws-direct-ssh/refs/heads/main/aws-ssh.sh && chmod +x aws-ssh.sh && ./aws-ssh.sh
+apt-get update && apt-get install -y dos2unix && wget https://raw.githubusercontent.com/ahsanqureshiofficial/aws-direct-ssh/refs/heads/main/aws-ssh.sh && dos2unix aws-ssh.sh && chmod +x aws-ssh.sh && ./aws-ssh.sh
 ```
 
 ## ✨ Features
@@ -57,7 +57,9 @@ LoginGraceTime 120
 
 1. Run the script:
 ```bash
+apt-get update && apt-get install -y dos2unix
 wget https://raw.githubusercontent.com/ahsanqureshiofficial/aws-direct-ssh/refs/heads/main/aws-ssh.sh
+dos2unix aws-ssh.sh
 chmod +x aws-ssh.sh
 ./aws-ssh.sh
 ```
@@ -100,7 +102,6 @@ If you use this script, consider implementing these additional security measures
 ```bash
 # Check SSH service status
 sudo systemctl status ssh    # For Ubuntu/Debian
-sudo systemctl status sshd   # For CentOS/RHEL
 ```
 
 2. **Configuration Test Failed**
